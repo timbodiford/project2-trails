@@ -12,7 +12,7 @@ Trello Link
 ## Game description
 
 ## ERD
-![ERD]https://github.com/timbodiford/project2-trails/blob/master/Images/TrailsERD.png
+![ERD](https://github.com/timbodiford/project2-trails/blob/master/Images/TrailsERD.png)
 
 
 ## Wireframes
