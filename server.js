@@ -17,7 +17,7 @@ const methodOverride = require('method-override')
  * import routers from controllers/
  *
  */
-const { templateRouter } = require('./controllers/template.js')
+const { trailRouter } = require('./controllers/trail.js')
 
 
 /* Step 3
@@ -61,7 +61,7 @@ app.set('view engine', 'hbs')
  * add router for the application to use. The first argument is a prefix to all
  * the paths defined in the router.
  */
-app.use('/helloworld', templateRouter)
+app.use('/trails', trailRouter)
 
 /* Step 5
  *
@@ -76,5 +76,5 @@ const PORT = process.env.PORT || 3000
  * Start the server
  */
 app.listen(PORT, () => {
-    console.log(`App is listening on PORT ${PORT}`)
+    console.log(`Trails App is listening on PORT ${PORT}`)
 })
