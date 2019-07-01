@@ -1,1 +1,25 @@
-<h1>Treadin Trodden Trails</h1>
+
+{{#each trails}}
+<div class="card" style="width: 18rem;">
+  <img src="{{imgLink}}" class="card-img-top" alt="...">
+  <div class="card-body">
+    <h5 class="card-title">{{trailName}}</h5>
+    <p class="card-text">{{description}}</p>
+    <p class="card-text">{{_id}}</p>
+
+    <a href="/trail" class="btn btn-primary">More Details</a>
+  </div>
+</div>
+{{/each}}
+
+
+{{!-- {{#each trails}}
+
+<p>Trail Name</p>
+<p>{{trailName}}</p>
+<p>{{_id}}</p>
+
+<p>Trail Description</p>
+<p>{{description}}</p>
+
+{{/each}} --}}
