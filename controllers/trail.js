@@ -33,6 +33,15 @@ trailRouter.get('/:trailId/edit', (req, res) => {
     res.render('trails/editTrailForm', { trail })
   })
 })
+trailRouter.put('/:trailId', (req, res) => {
+  trailApi.editTrail(req.params.trailId, req.body)
+  .then(() => {
+    res.redirect('/trails')
+  })
+  .catch((err) => {
+    res.send(err)
+})
+})
 
 
 
@@ -43,6 +52,7 @@ trailRouter.get('/:trailId', (req, res) => {
   })
 })
 
+
 trailRouter.delete('/:trailId', (req, res) => {
   trailApi.deleteTrail(req.params.trailId)
   .then((trail) => {
@@ -50,12 +60,7 @@ trailRouter.delete('/:trailId', (req, res) => {
   })
 })
 
-trailRouter.put('/:trailId', (req, res) => {
-  trailApi.editTrail(req.params.trailId, req.body)
-  .then(() => {
-    res.redirect('/trails')
-  })
-})
+
 
 
 
