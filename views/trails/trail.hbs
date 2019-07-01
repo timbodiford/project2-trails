@@ -1,4 +1,5 @@
 
+
 <div>
     <h3>Trail Name</h3>
     <p>{{trail.trailName}}</p>
@@ -32,9 +33,10 @@
 <div>
     <a class="btn btn-primary" href="/trails/{{trail._id}}/edit" role="button">Update Trail</a>
 
-    <a href=>Update Trail</a>
 </div>
 
-<div>
-    <button></button>
-</div>
+
+
+<form action="/trails/{{trail._id}}?_method=DELETE" method="POST">
+<button class="btn btn-primary" type="submit">Delete This Trail</button>
+</form>
