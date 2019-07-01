@@ -1,6 +1,34 @@
-<h2>Individual Trail</h2>
 
-{{trailName}}
+<div>
+    <h3>Trail Name</h3>
+    <p>{{trail.trailName}}</p>
+</div>
 
-{{description}}
+<div>
+    <h3>Distance</h3>
+    <p>{{trail.distance}}</p>
+</div>
 
+<div>
+    <h3>Difficulty</h3>
+    <p>{{trail.difficulty}}</p>
+</div>
+
+<div>
+    <h3>Rating</h3>
+    <p>{{trail.rating}}</p>
+</div>
+
+<div>
+    <h3>Description</h3>
+    <p>{{trail.description}}</p>
+</div>
+
+<div>
+    <h3>Image Link</h3>
+    <p>{{trail.imgLink}}</p>
+</div>
+
+<div>
+    <a href="/trails/{{trail._id}}/edit">Update Trail</a>
+</div>

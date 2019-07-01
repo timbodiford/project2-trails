@@ -26,10 +26,20 @@ trailRouter.get('/new', (req, res) => {
   res.render('trails/newTrailForm')
 })
 
+
+trailRouter.get('/:trailId/edit', (req, res) => {
+  trailApi.getTrail(req.params.trailId)
+  .then((trail) => {
+    res.render('trails/editTrailForm', { trail })
+  })
+})
+
+
+
 trailRouter.get('/:trailId', (req, res) => {
   trailApi.getTrail(req.params.trailId)
   .then((trail) => {
-    res.render('trail/trail', {trail} )
+    res.render('trails/trail', {trail} )
   })
 })
 
