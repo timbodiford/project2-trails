@@ -29,8 +29,8 @@ function getComments() {
   return CommentCollection.find()
 }
 
-function addComment(commentObject) {
-  return CommentCollection.create(commentObject)
+function addComment(trailId, commentObject) {
+  return CommentCollection.create(trailId, commentObject)
 }
 
 function getComment(commentId) {

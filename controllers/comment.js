@@ -5,7 +5,7 @@ const express = require('express')
 const commentApi = require('../models/comment.js')
 
 
-const commentRouter = express.Router()
+const commentRouter = express.Router({mergeParams: true})
 
 
 commentRouter.get('/', (req, res) => {
@@ -23,10 +23,14 @@ commentRouter.get('/', (req, res) => {
 // })
 
 commentRouter.post('/', (req, res) => {
-  req.body.trailId = req.params.trailId
-  commentApi.addComment(req.body)
-    .then(() => {
-      res.render('trails/trail')
+  // req.body.trailId = req.params.trailId
+  commentApi.addComment(req.params.trailId, req.body)
+  // console.log(req.params.trailId)
+    .then((comment) => {
+      res.redirect(`/trails/trail`)
+    })
+    .catch((err) => {
+      res.send(err)
     })
 })
 
