@@ -4,8 +4,7 @@ const mongoose = require('./connection.js')
 
 
 const CommentSchema = new mongoose.Schema({
-  trailId: 
-  mongoose.Types.ObjectId,
+  trailId: mongoose.Types.ObjectId,
   // {
   //   type: String,
   //   required: true

@@ -65,13 +65,13 @@ trailRouter.get('/:trailId', (req, res) => {
 })
 
 
-trailRouter.post('/:trailId/comment', (req, res) => {
-  req.body.trailId = req.params.trailId
-  commentApi.addComment(req.body)
-    .then(() => {
-      res.render('trails/trail')
-    })
-})
+// trailRouter.post('/:trailId/comment', (req, res) => {
+//   req.body.trailId = req.params.trailId
+//   commentApi.addComment(req.body)
+//     .then(() => {
+//       res.render('trails/trail')
+//     })
+// })
 
 
 
