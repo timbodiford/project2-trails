@@ -24,23 +24,25 @@ const commentRouter = express.Router({ mergeParams: true })
 //   })
 // })
 
-// commentRouter.post('/', (req, res) => {
-//   const trailId = req.params.trailId
-//   commentApi.addComment(req.params.trailId, req.body)
-//     .then(() => {
-//             res.redirect(`/trails/${trailId}`)
-//     })
-//     .catch(res.send)
-// })
-
-commentRouter.post('/:trailId/comment', (req, res) => {
-  req.body.trailId = req.params.trailId
-  commentApi.addComment(req.body)
+commentRouter.post('/', (req, res) => {
+  // req.body.trailId = req.params.trailId
+  const trailId = req.params.trailId
+  commentApi.addComment(trailId, req.body)
     .then(() => {
-      res.render(`/trails/${trailId}`)
+            res.redirect(`/trails/${trailId}`)
+    })
+    .catch((err) => {
+          res.send(err)
     })
 })
 
+// commentRouter.post('/', (req, res) => {
+//   req.body.trailId = req.params.trailId
+//   commentApi.addComment(req.body)
+//     .then(() => {
+//       res.render((`/trails/${trailId}`)
+//     )})
+// })
 
 
 
@@ -51,7 +53,8 @@ commentRouter.post('/:trailId/comment', (req, res) => {
   commentRouter.delete('/:commentId', (req, res) => {
     commentApi.deleteComment(req.params.commentId)
       .then((comment) => {
-        res.render('trails/trail')
+        const trailId = req.params.trailId
+        res.redirect(`/trails/${trailId}`)
       })
   })
 

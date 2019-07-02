@@ -29,7 +29,8 @@ function getComments() {
 }
 
 function addComment(trailId, commentObject) {
-  return CommentCollection.create(trailId, commentObject)
+  commentObject.trailId = trailId
+  return CommentCollection.create(commentObject)
 }
 
 function getComment(commentId) {
