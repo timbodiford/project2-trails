@@ -27,7 +27,9 @@ commentRouter.post('/', (req, res) => {
   commentApi.addComment(req.params.trailId, req.body)
   // console.log(req.params.trailId)
     .then((comment) => {
-      res.redirect(`/trails/trail`)
+      res.render(`/trails/${req.params.trailId}`)
+      // res.render(`/trails/${req.params.trailId}`)
+
     })
     .catch((err) => {
       res.send(err)
