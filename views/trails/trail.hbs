@@ -60,5 +60,8 @@
     <form action="/trails/{{trailId}}/comments/{{_id}}?_method=DELETE" method="POST">
         <button class="btn btn-primary" type="submit">Delete This Comment</button>
     </form>
+
+    <a class="btn btn-primary" href="/trails/{{trailId}}/comments/{{_id}}/edit" role="button">Update Comment</a>
+
     {{/each}}
 </ul>

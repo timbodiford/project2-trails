@@ -70,21 +70,21 @@ commentRouter.post('/', (req, res) => {
 
 
 
-  // commentRouter.get('/:commentId/edit', (req, res) => {
-  //   commentApi.getComment(req.params.commentId)
-  //   .then((comment) => {
-  //     res.render('comments/editCommentForm', { comment })
-  //   })
-  // })
-  // commentRouter.put('/:commentId', (req, res) => {
-  //   commenmtApi.editComment(req.params.commentId, req.body)
-  //   .then(() => {
-  //     res.redirect('/comments')
-  //   })
-  //   .catch((err) => {
-  //     res.send(err)
-  // })
-  // })
+  commentRouter.get('/:commentId/edit', (req, res) => {
+    commentApi.getComment(req.params.commentId)
+    .then((comment) => {
+      res.render('comments/editComment', { comment })
+    })
+  })
+  commentRouter.put('/:commentId', (req, res) => {
+    commenmtApi.editComment(req.params.commentId, req.body)
+    .then(() => {
+      res.redirect('/comments')
+    })
+    .catch((err) => {
+      res.send(err)
+  })
+  })
 
 
 

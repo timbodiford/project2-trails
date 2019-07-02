@@ -34,7 +34,7 @@ function addComment(trailId, commentObject) {
 }
 
 function getComment(commentId) {
-  return CommentCollection.findById(commemntId)
+  return CommentCollection.findById(commentId)
 }
 
 function deleteComment(commentId) {
