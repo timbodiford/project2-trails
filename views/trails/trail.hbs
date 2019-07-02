@@ -1,4 +1,10 @@
-
+<h1>Treadin Trodden Trails</h1>
+<nav class="nav nav-pills flex-column flex-sm-row">
+    <a class="flex-sm-fill text-sm-center nav-link active" href="/trails">All Trails</a>
+    {{!-- <a class="flex-sm-fill text-sm-center nav-link" href="/trails/new">Add A Trail</a>
+  <a class="flex-sm-fill text-sm-center nav-link" href="#">Link</a> --}}
+    {{!-- <a class="flex-sm-fill text-sm-center nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a> --}}
+</nav>
 
 <div>
     <h3>Trail Name</h3>
@@ -38,5 +44,16 @@
 
 
 <form action="/trails/{{trail._id}}?_method=DELETE" method="POST">
-<button class="btn btn-primary" type="submit">Delete This Trail</button>
+    <button class="btn btn-primary" type="submit">Delete This Trail</button>
 </form>
+
+
+<h2>Comments</h2>
+<ul>
+    {{#each comment}}
+    <li>{{comment}} {{_id}}</li>
+    <form action="/trails/{{trailId}}/comments/{{_id}}?_method=DELETE" method="POST">
+        <button class="btn btn-primary" type="submit">Delete This Comment</button>
+    </form>
+    {{/each}}
+</ul>

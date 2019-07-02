@@ -4,16 +4,18 @@ const mongoose = require('./connection.js')
 
 
 const CommentSchema = new mongoose.Schema({
- trailId: {
-   type: String,
-   required: true,
- },
-  user: {
-    type: Number,
-    required: true,
-  },
-  date: {
-    type: new Date,
+  trailId: 
+  mongoose.Types.ObjectId,
+  // {
+  //   type: String,
+  //   required: true
+  // },
+  // user: {
+  //   type: Number,
+  //   required: true,
+  // },
+  comment: {
+    type: String,
     required: true,
   },
 })
@@ -43,6 +45,9 @@ function editComment(commentId, commemntObject) {
   return CommentCollection.findByIdAndUpdate(commentId, commemntObject)
 }
 
+function getCommentsByTrailId (trailId) {
+  return CommentCollection.find({trailId: trailId})
+}
 
 
 
@@ -52,5 +57,6 @@ module.exports = {
   getComment,
   addComment,
   deleteComment,
-  editComment
+  editComment,
+  getCommentsByTrailId
 }

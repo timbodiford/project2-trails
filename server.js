@@ -18,7 +18,7 @@ const methodOverride = require('method-override')
  *
  */
 const { trailRouter } = require('./controllers/trail.js')
-
+const { commentRouter } = require('./controllers/comment.js')
 
 /* Step 3
  *
@@ -61,7 +61,17 @@ app.set('view engine', 'hbs')
  * add router for the application to use. The first argument is a prefix to all
  * the paths defined in the router.
  */
+// app.use('/trails', trailRouter)
+
+
+app.get('/', (req, res) => {
+    res.redirect('/trails')
+})
 app.use('/trails', trailRouter)
+app.use('/trails/:trailId/comments', commentRouter)
+
+
+
 
 /* Step 5
  *

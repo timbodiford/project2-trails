@@ -3,6 +3,7 @@ const express = require('express')
 
 
 const trailApi = require('../models/trail.js')
+const commentApi = require('../models/comment.js')
 
 
 const trailRouter = express.Router()
@@ -33,6 +34,13 @@ trailRouter.get('/:trailId/edit', (req, res) => {
     res.render('trails/editTrailForm', { trail })
   })
 })
+
+
+
+
+
+
+
 trailRouter.put('/:trailId', (req, res) => {
   trailApi.editTrail(req.params.trailId, req.body)
   .then(() => {
@@ -48,9 +56,25 @@ trailRouter.put('/:trailId', (req, res) => {
 trailRouter.get('/:trailId', (req, res) => {
   trailApi.getTrail(req.params.trailId)
   .then((trail) => {
-    res.render('trails/trail', {trail} )
+    commentApi.getCommentsByTrailId(trail._id)
+    .then((comment) => {
+      res.render('trails/trail', {trail, comment} )
+
+    })
   })
 })
+
+
+trailRouter.post('/:trailId/comment', (req, res) => {
+  req.body.trailId = req.params.trailId
+  commentApi.addComment(req.body)
+    .then(() => {
+      res.render('trails/trail')
+    })
+})
+
+
+
 
 
 trailRouter.delete('/:trailId', (req, res) => {
