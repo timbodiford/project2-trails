@@ -30,6 +30,10 @@ commentRouter.post('/', (req, res) => {
     })
 })
 
+commentRouter.get('/new', (req, res) => {
+  res.render('comments/newCommentForm', {trailId: req.params.trailId})
+})
+
 commentRouter.delete('/:commentId', (req, res) => {
   commentApi.deleteComment(req.params.commentId)
     .then((comment) => {
@@ -46,9 +50,7 @@ commentRouter.delete('/:commentId', (req, res) => {
 
 
 
-// commentRouter.get('/new', (req, res) => {
-//   res.render('comments/newCommentForm')
-// })
+
 
 
 // commentRouter.get('/:commentId/edit', (req, res) => {

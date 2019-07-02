@@ -49,8 +49,13 @@
 
 
 <h2>Comments</h2>
+    <a class="btn btn-primary" href="/trails/{{trail.id}}/comments/new" role="button">Add Comment</a>
+
+
 <ul>
     {{#each comment}}
+
+
     <li>{{comment}} {{_id}}</li>
     <form action="/trails/{{trailId}}/comments/{{_id}}?_method=DELETE" method="POST">
         <button class="btn btn-primary" type="submit">Delete This Comment</button>
