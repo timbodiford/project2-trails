@@ -1,5 +1,22 @@
 
-<form action="/users" method="POST">
+{{!-- <form action="/users" method="POST">
+<label for="userName">User Name:</label>
+<input type="text" name="userName" id="userName">
+
+<label for="firstName">First Name:</label>
+<input type="firstName" name="firstName" id="firstName">
+
+<label for="lastName">Last Name:</label>
+<input type="lastName" name="lastName" id="lastrName">
+
+<input type="submit" value="Add User">
+
+
+</form> --}}
+
+{{!-- Experimenting below with tying the user to the trail --}}
+
+<form action="/trails{{trailId}}/users" method="POST">
 <label for="userName">User Name:</label>
 <input type="text" name="userName" id="userName">
 

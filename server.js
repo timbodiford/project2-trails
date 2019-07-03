@@ -70,6 +70,7 @@ app.get('/', (req, res) => {
 })
 app.use('/trails', trailRouter)
 app.use('/trails/:trailId/comments', commentRouter)
+// app.use('/trails/:trailId/users', trailRouter)
 app.use('/users', userRouter)
 
 
