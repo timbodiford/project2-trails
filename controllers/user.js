@@ -3,6 +3,7 @@ const express = require('express')
 
 
 const userApi = require('../models/user.js')
+// const trailApi = require('../models/trail.js')
 
 
 const userRouter = express.Router()

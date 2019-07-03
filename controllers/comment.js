@@ -73,13 +73,15 @@ commentRouter.post('/', (req, res) => {
   commentRouter.get('/:commentId/edit', (req, res) => {
     commentApi.getComment(req.params.commentId)
     .then((comment) => {
-      res.render('comments/editComment', { comment })
+      res.render('comments/editComment', { 
+        trailId: req.params.trailId,
+        comment: comment })
     })
   })
   commentRouter.put('/:commentId', (req, res) => {
-    commenmtApi.editComment(req.params.commentId, req.body)
+    commentApi.editComment(req.params.commentId, req.body)
     .then(() => {
-      res.redirect('/comments')
+      res.redirect(`/trails/${req.params.trailId}`)
     })
     .catch((err) => {
       res.send(err)
