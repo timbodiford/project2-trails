@@ -3,7 +3,7 @@ const express = require('express')
 
 
 const userApi = require('../models/user.js')
-// const trailApi = require('../models/trail.js')
+const trailApi = require('../models/trail.js')
 
 
 const userRouter = express.Router()
@@ -35,7 +35,7 @@ userRouter.get('/:userId/edit', (req, res) => {
   })
 })
 userRouter.put('/:userId', (req, res) => {
-  commenmtApi.editUser(req.params.userId, req.body)
+  userApi.editUser(req.params.userId, req.body)
   .then(() => {
     res.redirect('/users')
   })

@@ -19,7 +19,7 @@ const methodOverride = require('method-override')
  */
 const { trailRouter } = require('./controllers/trail.js')
 const { commentRouter } = require('./controllers/comment.js')
-// const { userRouter } = require('./controllers/user.js')
+const { userRouter } = require('./controllers/user.js')
 
 /* Step 3
  *
@@ -70,7 +70,7 @@ app.get('/', (req, res) => {
 })
 app.use('/trails', trailRouter)
 app.use('/trails/:trailId/comments', commentRouter)
-app.use('/trails/:trailId/users', userRouter)
+app.use('/users', userRouter)
 
 
 

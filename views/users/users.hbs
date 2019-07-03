@@ -1,0 +1,28 @@
+<h1>Treadin Trodden Trails</h1>
+<nav class="nav nav-pills flex-column flex-sm-row">
+  <a class="flex-sm-fill text-sm-center nav-link" href="/trails">All Trails</a>
+  <a class="flex-sm-fill text-sm-center nav-link" href="/trails/new">Add A Trail</a>
+  <a class="flex-sm-fill text-sm-center nav-link active" href="/users">Users</a>
+  {{!-- <a class="flex-sm-fill text-sm-center nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a> --}}
+</nav>
+
+<div>
+      <a class="btn btn-primary" href="/users/new">Add A User</a>
+
+</div>
+
+{{#each users}}
+<div>
+{{userName}}</br>
+{{_id}}</br>
+{{firstName}} {{lastName}}</br>
+    <form action="/users/{{_id}}?_method=DELETE" method="POST">
+        <button class="btn btn-primary" type="submit">Delete This User</button>
+    </form>
+
+    <a class="btn btn-primary" href="/users/{{_id}}/delete" role="button">Update User</a>
+
+</div>
+{{/each}}
+
+
