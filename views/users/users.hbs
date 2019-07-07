@@ -12,20 +12,20 @@
         <a class="btn btn-primary" href="/users/new">Add A User</a>
 
       </div>
-      
+
       <hr>
 
       {{#each users}}
-      <div>
-        {{userName}}</br>
-        {{firstName}} {{lastName}}</br>
+      <div class="form-group">
+        User ID: {{userName}}</br>
+        Name: {{firstName}} {{lastName}}</br>
         <div class="trail-buttons">
+          <a class="btn btn-primary" href="/users/{{_id}}/edit" role="button">Update User</a>
 
           <form action="/users/{{_id}}?_method=DELETE" method="POST">
-            <button class="btn btn-primary" type="submit">Delete This User</button>
+            <button class="btn btn-primary delete" type="submit" onclick="if (!confirm('Are you sure?')) { return false }">Delete This User</button>
           </form>
 
-          <a class="btn btn-primary" href="/users/{{_id}}/edit" role="button">Update User</a>
         </div>
       </div>
       {{/each}}

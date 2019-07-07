@@ -53,7 +53,9 @@ nav {
 .btn.btn-primary.delete {
     background-color: maroon;
 }
-
+.img-trlpage {
+    width: 500px;
+}
 
 h1{ font-family: 'Bowlby One SC', cursive;
     margin: 50px;
