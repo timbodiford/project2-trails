@@ -39,17 +39,28 @@ nav {
     color: black;
 }
 
-.btn:hover{
+.btn:hover {
     background-color: saddlebrown;
     border-color: saddlebrown;
 }
+.trail-buttons {
+    display: inline-flex;
+    margin: 0 -25px;
+}
+.trail-buttons>* {
+    margin: 0 25px;
+}
+.btn.btn-primary.delete {
+    background-color: maroon;
+}
+
 
 h1{ font-family: 'Bowlby One SC', cursive;
     margin: 50px;
 }
 
 .form-div {
-    padding: 15px 0 0 25px;
+    padding: 15px 0 30px 25px;
 }
 
 input[type=text] {

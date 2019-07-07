@@ -3,70 +3,78 @@
     {{!-- <a class="flex-sm-fill text-sm-center nav-link" href="/trails/new">Add A Trail</a>
   <a class="flex-sm-fill text-sm-center nav-link" href="#">Link</a> --}}
     {{!-- <a class="flex-sm-fill text-sm-center nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a> --}}
-  <a class="flex-sm-fill text-sm-center nav-link " href="/users">Users</a>
+    <a class="flex-sm-fill text-sm-center nav-link " href="/users">Users</a>
 
 </nav>
+<div class="form-div">
 
-<div>
-    <h3>Trail Name</h3>
-    <p>{{trail.trailName}}</p>
+    <div class="form-group">
+        <h4>Trail Name</h4>
+        <p>{{trail.trailName}}</p>
+    </div>
+
+    <div class="form-group">
+        <h4>Distance</h4>
+        <p>{{trail.distance}} miles</p>
+    </div>
+
+    <div class="form-group">
+        <h4>Difficulty</h4>
+        <p>{{trail.difficulty}}</p>
+    </div>
+
+    <div class="form-group">
+        <h4>Rating</h4>
+        <p>{{trail.rating}}</p>
+    </div>
+
+    <div class="form-group">
+        <h4>Description</h4>
+        <p>{{trail.description}}</p>
+    </div>
+
+    <div class="form-group">
+        <h4>Image Link</h4>
+        <p>{{trail.imgLink}}</p>
+    </div>
+    <div class="trail-buttons">
+
+        <div class="form-group">
+
+            <a class="btn btn-primary" href="/trails/{{trail._id}}/edit" role="button">Update Trail</a>
+
+        </div>
+
+
+        <form action="/trails/{{trail._id}}?_method=DELETE" method="POST">
+            <button class="btn btn-primary" type="submit">Delete This Trail</button>
+        </form>
+    </div>
 </div>
 
-<div>
-    <h3>Distance</h3>
-    <p>{{trail.distance}}</p>
-</div>
-
-<div>
-    <h3>Difficulty</h3>
-    <p>{{trail.difficulty}}</p>
-</div>
-
-<div>
-    <h3>Rating</h3>
-    <p>{{trail.rating}}</p>
-</div>
-
-<div>
-    <h3>Description</h3>
-    <p>{{trail.description}}</p>
-</div>
-
-<div>
-    <h3>Image Link</h3>
-    <p>{{trail.imgLink}}</p>
-</div>
-
-<div>
-    <a class="btn btn-primary" href="/trails/{{trail._id}}/edit" role="button">Update Trail</a>
-
-</div>
-
-
-
-<form action="/trails/{{trail._id}}?_method=DELETE" method="POST">
-    <button class="btn btn-primary" type="submit">Delete This Trail</button>
-</form>
-
-
-<h2>Comments</h2>
+<div class="form-group">
+    <h4>Comments</h4>
     <a class="btn btn-primary" href="/trails/{{trail.id}}/comments/new" role="button">Add Comment</a>
 
 
-<ul>
-    {{#each comment}}
+    <ul>
+        {{#each comment}}
+
+        <li>{{comment}}</li>
+        <div class="trail-buttons">
+
+            <a class="btn btn-primary" href="/trails/{{trailId}}/comments/{{_id}}/edit" role="button">Update Comment</a>
+
+            <form action="/trails/{{trailId}}/comments/{{_id}}?_method=DELETE" method="POST">
+                <button class="btn btn-primary delete" type="submit">Delete This Comment</button>
+            </form>
+        </div>
+
+        {{/each}}
+    </ul>
+</div>
 
 
-    <li>{{comment}} {{_id}}</li>
-    <form action="/trails/{{trailId}}/comments/{{_id}}?_method=DELETE" method="POST">
-        <button class="btn btn-primary" type="submit">Delete This Comment</button>
-    </form>
-
-    <a class="btn btn-primary" href="/trails/{{trailId}}/comments/{{_id}}/edit" role="button">Update Comment</a>
-
-    {{/each}}
-</ul>
-
-{{#each user}}
+{{!-- {{#each user}}
 {{ userName}}
-{{/each}}
+{{/each}} --}}
