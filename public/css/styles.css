@@ -72,3 +72,8 @@ input[type=text] {
     border-radius: 4px;
     box-sizing: border-box;
 }
+
+hr {
+    width: 80%;
+    border-top: 1px maroon;
+}
