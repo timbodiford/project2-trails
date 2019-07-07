@@ -5,11 +5,19 @@ body {
 nav {
     background-color: tan;
     border-color: brown;
+    color: white;
 }
-.flex-sm-fill {
-    background-color: tan;
+.flex-sm-fill.text-sm-center.nav-link {
+    /* background-color: saddlebrown;
+    border-color: brown; */
+    color: white;
+}
+.flex-sm-fill.text-sm-center.nav-link.active {
+    background-color: saddlebrown;
     border-color: brown;
+    color: white;
 }
+
 
 .trail-cards {
     margin: 50px;
@@ -22,6 +30,7 @@ nav {
 .btn {
     background-color: tan;
     border-color: brown;
+    color: black;
 }
 
 .btn:hover{
