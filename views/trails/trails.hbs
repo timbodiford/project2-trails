@@ -6,21 +6,21 @@
 </nav>
 
 
+<div class="trail-cards">
 
-{{!-- <div class="trail-cards" --}}
-{{#each trails}}
-<div class="card" style="width: 18rem;">
-  <img src="{{imgLink}}" class="card-img-top" alt="...">
-  <div class="card-body">
-    <h5 class="card-title">{{trailName}}</h5>
-    <p class="card-text">{{description}}</p>
-    <p class="card-text">{{_id}}</p>
+  {{#each trails}}
+  <div class="card" style="width: 18rem;">
+    <img src="{{imgLink}}" class="card-img-top" alt="...">
+    <div class="card-body">
+      <h5 class="card-title">{{trailName}}</h5>
+      <p class="card-text">{{description}}</p>
+      <p class="card-text">{{_id}}</p>
 
-    <a href="/trails/{{_id}}" class="btn btn-primary">More Details</a>
+      <a href="/trails/{{_id}}" class="btn btn-primary">More Details</a>
+    </div>
   </div>
+  {{/each}}
 </div>
-{{/each}}
-{{!-- </div> --}}
 
 
 {{!-- {{#each trails}}

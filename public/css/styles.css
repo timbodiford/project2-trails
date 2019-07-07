@@ -1,4 +1,30 @@
 body {
-    background-color: burlywood;
+    background-color: cornsilk;
 }
 
+nav {
+    background-color: tan;
+    border-color: brown;
+}
+.flex-sm-fill {
+    background-color: tan;
+    border-color: brown;
+}
+
+.trail-cards {
+    margin: 50px;
+    border: 3px;
+    display: flex;
+    justify-content: space-around;
+    border-color: saddlebrown;
+}
+
+.btn {
+    background-color: tan;
+    border-color: brown;
+}
+
+.btn:hover{
+    background-color: saddlebrown;
+    border-color: saddlebrown;
+}
