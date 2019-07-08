@@ -1,25 +1,27 @@
-<form method="POST" action="/trails/{{trail._id}}?_method=PUT" >
+<form method="POST" action="/trails/{{trail._id}}?_method=PUT">
+    <div class="form-div">
+        <div class="form-group">
+            <label for="trailName">Trail Name:</label> </br>
+            <input type="text" name="trailName" id="trailName" value="{{trail.trailName}}"> </br>
 
-<label for="trailName">Trail Name:</label> </br>
-<input type="text" name="trailName" id="trailName" value="{{trail.trailName}}"> </br>
+            <label for="distance">Distance:</label> </br>
+            <input type="text" name="distance" id="distance" value="{{trail.distance}}"> </br>
 
-<label for="distance">Distance:</label> </br>
-<input type="text" name="distance" id="distance" value="{{trail.distance}}"> </br>
+            <label for="difficulty">Difficulty:</label> </br>
+            <input type="text" name="difficulty" id="difficulty" value="{{trail.difficulty}}"> </br>
 
-<label for="difficulty">Difficulty:</label> </br>
-<input type="text" name="difficulty" id="difficulty" value="{{trail.difficulty}}"> </br>
- 
-<label for="rating">Rating:</label> </br>
-<input type="text" name="rating" id="rating" value="{{trail.rating}}"> </br>
+            <label for="rating">Rating:</label> </br>
+            <input type="text" name="rating" id="rating" value="{{trail.rating}}"> </br>
 
-<label for="description">Description:</label> </br>
-<input type="text" name="description" id="description" value="{{trail.description}}"> </br>
+            <label for="description">Description:</label> </br>
+            <input type="text" name="description" id="description" value="{{trail.description}}"> </br>
 
-<label for="imgLink">Link to Image:</label> </br>
-<input type="text" name="imgLink" id="imgLink" value="{{trail.imgLink}}"> </br>
+            <label for="imgLink">Link to Image:</label> </br>
+            <input type="text" name="imgLink" id="imgLink" value="{{trail.imgLink}}"> </br>
+        </div>
+    </div>
 
-
-<input type="submit" value="Update Trail">
+    <input type="submit" value="Update Trail">
 
 
 
